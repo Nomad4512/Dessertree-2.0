@@ -4,7 +4,6 @@ import com.dessertree.springboot.domain.post.Posts;
 import com.dessertree.springboot.domain.post.PostsRepository;
 import com.dessertree.springboot.web.dto.PostsSaveRequestDto;
 import com.dessertree.springboot.web.dto.PostsUpdateRequestDto;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,8 +16,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 
