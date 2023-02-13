@@ -15,4 +15,15 @@ public class IndexController {
 
         return "index";
     }
+
+    @GetMapping("/index")
+    public String index2() {
+
+        return "index";
+    }
+    @GetMapping("/post")
+    public String post() {
+
+        return "board";
+    }
 }
