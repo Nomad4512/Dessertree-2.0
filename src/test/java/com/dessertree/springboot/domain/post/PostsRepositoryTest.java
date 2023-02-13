@@ -7,17 +7,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
-class PostRepositoryTest {
+class PostsRepositoryTest {
 
     @Autowired
-    PostRepository postRepository;
+    PostsRepository postsRepository;
 
     @AfterEach
     public void cleanup(){
-        postRepository.deleteAll();
+        postsRepository.deleteAll();
     }
 
     @Test
@@ -26,17 +25,17 @@ class PostRepositoryTest {
         String title = "테스트 게시글";
         String content = "테스트 본문";
 
-        postRepository.save(PostRequest.builder()
+        postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
                 .author("hyunbin")
                 .build());
 
         //when
-        List<PostRequest> postsList = postRepository.findAll();
+        List<Posts> postsList = postsRepository.findAll();
 
         //then
-        PostRequest posts = postsList.get(0);
+        Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo("테스트 게시글");
         assertThat(posts.getContent()).isEqualTo("테스트 본문");
 

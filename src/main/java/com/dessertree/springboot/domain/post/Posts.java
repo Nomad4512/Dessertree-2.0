@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @Entity
-public class PostRequest {
+public class Posts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class PostRequest {
 
 
     @Builder // 생성자 대신
-    public PostRequest(String title, String content, String author, int viewCnt, Boolean noticeYn,
+    public Posts(String title, String content, String author, int viewCnt, Boolean noticeYn,
                        Boolean deleteYn, LocalDateTime createdDate, LocalDateTime modifiedDate){
         this.title = title;
         this.content = content;
@@ -39,5 +39,10 @@ public class PostRequest {
         this.deleteYn = deleteYn;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
+    }
+
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
     }
 }
